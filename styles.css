@@ -1,0 +1,44 @@
+body{
+        background:linear-gradient(rgba(0, 12, 37, 0.854), rgba(0, 54, 116, 0.675)),url("currencybg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+}
+section{
+        /* border: red solid 4px;  */
+        height: 100vh;
+        display: flex;
+        align-items: center;
+}
+.width80px{
+        width: 80px !important;
+}
+input[type=text]{
+      border: none;
+      outline: none;
+}
+.form-control:focus{
+       border: none !important;
+       box-shadow: none !important; 
+}
+select{
+        width: 25% !important;
+        font-size: 12px !important;
+}
+#swap-btn{
+        /* background: rgb(53, 99, 180);
+        color: white;
+        border: white solid 1px;
+        border-radius: 5px;
+        padding: 2px 10px; */
+        font-size: 14px;
+        position: absolute;
+        top: 88%;
+        left: 43%;
+}
+.padding-col{
+        padding: 15px 28px !important;
+        background: linear-gradient(rgba(165, 165, 165, 0.786), rgba(165, 165, 165, 0.786));
+        border: 0.5px solid white;
+}
