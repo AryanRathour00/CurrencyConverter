@@ -9,6 +9,10 @@ const selectCurrencyTwo = document.getElementById("selectCurrency2");
 //   selectCurrency();
 // }
 
+selectCurrencyOne.addEventListener("change", convertButtonHTML);
+selectCurrencyTwo.addEventListener("change", convertButtonHTML);
+
+// function for creating a select option for currencies 
 function selectCurrency() {
   let url = `https://api.currencyapi.com/v3/latest?apikey=cur_live_p5ShIP4QNBmwDRlssYKTEX2QuwssAAxxJthCmKwe`;
   const xhr = new XMLHttpRequest();
@@ -16,17 +20,30 @@ function selectCurrency() {
   xhr.onload = function () {
     let currency = JSON.parse(this.responseText);
     let selecthtml = "";
-    let selectValue = 0
+    let selectValue = 0;
     for (let element in currency["data"]) {
       //  console.log(currency["data"][element])
-       let currencyName = currency["data"][element];
-       
-       selecthtml += `<option value='${selectValue + 1}'>${currencyName["code"]}</option>`
+      let currencyName = currency["data"][element];
+
+      selecthtml += `<option value='${currencyName["code"]}'>${currencyName["code"]}</option>`;
     }
     selectCurrencyOne.innerHTML = selecthtml;
     selectCurrencyTwo.innerHTML = selecthtml;
+    convertButtonHTML();
   };
   xhr.send();
-};
+  
+}
 
+// function for convert button text to show selected currencies
+function convertButtonHTML() {
+  let selectOne = selectCurrencyOne.value;
+  let selectTwo = selectCurrencyTwo.value;
+  convertButton.innerHTML = `Convert ${selectOne} to ${selectTwo}`;
+}
+convertButtonHTML();
 
+// function for swap button 
+function swapOptions(){
+  
+}
