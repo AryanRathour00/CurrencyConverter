@@ -5,12 +5,13 @@ const swapButton = document.getElementById("swap-btn");
 const selectCurrencyOne = document.getElementById("selectCurrency1");
 const selectCurrencyTwo = document.getElementById("selectCurrency2");
 
-// window.onload = function(){
-//   selectCurrency();
-// }
+window.onload = function(){
+  selectCurrency();
+}
 
 selectCurrencyOne.addEventListener("change", convertButtonHTML);
 selectCurrencyTwo.addEventListener("change", convertButtonHTML);
+swapButton.addEventListener('click',swapOptions);
 
 // function for creating a select option for currencies 
 function selectCurrency() {
@@ -32,7 +33,6 @@ function selectCurrency() {
     convertButtonHTML();
   };
   xhr.send();
-  
 }
 
 // function for convert button text to show selected currencies
@@ -41,9 +41,16 @@ function convertButtonHTML() {
   let selectTwo = selectCurrencyTwo.value;
   convertButton.innerHTML = `Convert ${selectOne} to ${selectTwo}`;
 }
-convertButtonHTML();
+// convertButtonHTML();
 
 // function for swap button 
 function swapOptions(){
-  
+   let aTemp = selectCurrencyOne.value;
+   let bTemp = selectCurrencyTwo.value;
+   let temp ; 
+   if(convertButton.innerHTML === `Convert ${aTemp} to ${bTemp}`){
+    convertButton.innerHTML = `Convert ${bTemp} to ${aTemp}`
+   }
+   selectCurrencyOne.value = bTemp;
+   selectCurrencyTwo.value = aTemp;
 }
