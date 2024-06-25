@@ -39,6 +39,13 @@ select{
 }
 .padding-col{
         padding: 15px 28px !important;
-        background: linear-gradient(rgba(165, 165, 165, 0.786), rgba(165, 165, 165, 0.786));
+        background: linear-gradient(rgba(127, 127, 127, 0.786), rgba(127, 127, 127, 0.786));
         border: 0.5px solid white;
+}
+.spinnerpostion{
+        position: absolute;
+        z-index: 1000;
+        top: 80%;
+        left: 49.4%;
+        
 }
