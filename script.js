@@ -38,6 +38,8 @@ function selectCurrency() {
     }
     selectCurrencyOne.innerHTML = selecthtml;
     selectCurrencyTwo.innerHTML = selecthtml;
+    selectCurrencyOne.value = 'USD';
+    selectCurrencyTwo.value = 'INR';
     convertButtonHTML();
     loading.classList.add('d-none');
   };
